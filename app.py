@@ -31,10 +31,10 @@ def hash_password(password):
         print("Something went wrong while hashing, but I'm not telling you what!")
 
 # 5. Environment variables logging (security issue)
-def log_environment():
-    print("Listing all environment variables for fun and insecurity:")
-    for key, value in os.environ.items():
-        print(f"{key}: {value}")
+# def log_environment():
+#     print("Listing all environment variables for fun and insecurity:")
+#     for key, value in os.environ.items():
+#         print(f"{key}: {value}")
 
 # 6. Unused imports and inefficient code
 import random
