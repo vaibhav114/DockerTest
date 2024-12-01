@@ -1,0 +1,23 @@
+name: Build  # Name of the workflow
+
+on:
+  push:
+    branches:
+      - main  # Run on push to the main branch
+  pull_request:
+    types: [opened, synchronize, reopened]  # Trigger on pull request events (opened, synchronized, or reopened)
+
+jobs:
+  sonarcloud:
+    name: SonarQube Cloud
+    runs-on: ubuntu-latest  # The environment for running the job
+    steps:
+      - uses: actions/checkout@v4  # Checkout the code from the repository
+        with:
+          fetch-depth: 0  # Ensures the full history is cloned for better analysis
+
+      - name: SonarQube Cloud Scan
+        uses: SonarSource/sonarcloud-github-action@master  # SonarCloud GitHub Action for running analysis
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token for accessing GitHub API (required for PR analysis)
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Your SonarCloud token for authenticating the analysis
