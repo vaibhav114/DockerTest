@@ -46,4 +46,4 @@ if __name__ == "__main__":
     unsafe_query("'; DROP TABLE users; --")
     read_file("/etc/passwd")
     hash_password("very_secure_password")
-    log_environment()
+    # log_environment()
