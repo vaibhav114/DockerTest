@@ -37,9 +37,9 @@ def hash_password(password):
 #         print(f"{key}: {value}")
 
 # 6. Unused imports and inefficient code
-import random
-for i in range(1000000):  # Inefficient loop doing nothing
-    pass
+# import random
+# for i in range(1000000):  # Inefficient loop doing nothing
+#     pass
 
 if __name__ == "__main__":
     connect_to_db()
